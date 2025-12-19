@@ -26,20 +26,11 @@ const Navbar = () => {
 
 
         {/* RIGHT: Button */}
-       <div>
-  <Button
-    onClick={() => {
-      const el = document.getElementById("contact-section");
-      el?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }}
-  >
-    Join the Waitlist
-  </Button>
-</div>
-
+        <div>
+          <a href="#contact-form">
+            <Button>Join the Waitlist</Button>
+          </a>
+        </div>
 
       </div>
     </header>
