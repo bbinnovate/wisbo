@@ -21,7 +21,7 @@ export default function Home() {
       <CardsSection/>
       <ThirdSection/>
       <FourthSection/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

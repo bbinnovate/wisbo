@@ -2,38 +2,39 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import confetti from "canvas-confetti";
 
 type PopupProps = {
   open: boolean;
   onClose?: () => void;
 };
 
-/* 🎉 Confetti from LEFT-BOTTOM & RIGHT-BOTTOM */
-const shootBottomSideConfetti = () => {
+/* 🎉 Confetti from LEFT & RIGHT bottom */
+const shootBottomSideConfetti = async () => {
+  const confetti = (await import("canvas-confetti")).default;
+
   const duration = 2500;
   const end = Date.now() + duration;
 
   const colors = ["#f6a81c", "#ff4d6d", "#ffffff"];
 
   (function frame() {
-    // LEFT BOTTOM → UPWARD
+    // LEFT bottom
     confetti({
       particleCount: 6,
-      angle: 60,              // shoots upward-right
+      angle: 60,
       spread: 70,
-      origin: { x: 0, y: 1 }, // left bottom
+      origin: { x: 0, y: 1 },
       colors,
       startVelocity: 45,
       gravity: 0.9,
     });
 
-    // RIGHT BOTTOM → UPWARD
+    // RIGHT bottom
     confetti({
       particleCount: 6,
-      angle: 120,             // shoots upward-left
+      angle: 120,
       spread: 70,
-      origin: { x: 1, y: 1 }, // right bottom
+      origin: { x: 1, y: 1 },
       colors,
       startVelocity: 45,
       gravity: 0.9,
@@ -46,7 +47,6 @@ const shootBottomSideConfetti = () => {
 };
 
 const Popup = ({ open, onClose }: PopupProps) => {
-  /* 🔥 Fire confetti when popup opens */
   useEffect(() => {
     if (open) {
       shootBottomSideConfetti();
@@ -70,22 +70,7 @@ const Popup = ({ open, onClose }: PopupProps) => {
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="
-              absolute
-              -top-6
-              left-1/2
-              -translate-x-1/2
-              w-12
-              h-12
-              rounded-full
-              bg-[#f6a81c]
-              flex
-              items-center
-              justify-center
-              shadow-lg
-              hover:scale-105
-              transition
-            "
+            className="absolute cursor-pointer -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#f6a81c] flex items-center justify-center shadow-lg hover:scale-105 transition"
           >
             <span className="text-white text-xl font-bold">✕</span>
           </button>
@@ -99,8 +84,8 @@ const Popup = ({ open, onClose }: PopupProps) => {
           <Image
             src="/images/masscoat.webp"
             alt="Success"
-            width={250}
-            height={250}
+            width={220}
+            height={220}
             className="mx-auto mt-6"
             priority
           />

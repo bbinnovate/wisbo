@@ -1,14 +1,26 @@
 "use client";
-
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Button from "../Button";
+import Popup from "../Popup";
 import AnimatedRichText from "../Animation/AnimatedText";
 import FadeInFromBottom from './../Animation/FadeInFromBottom';
 import FadeInFromLeft from './../Animation/FadeInFromLeft';
 import FadeInFromRight from './../Animation/FadeInFromRight';
+import ContactPage from "./ContactPage";
 
 const ThirdSection = () => {
+    const [showPopup, setShowPopup] = useState(false);
+    const [resetFormKey, setResetFormKey] = useState(0);
+  
+    const handleSuccess = () => {
+      setShowPopup(true);
+  
+      // ⏱️ Close popup after 5 seconds
+      setTimeout(() => {
+        setShowPopup(false);
+        setResetFormKey((prev) => prev + 1); // 🔥 reset form
+      }, 5000);
+    };
   return (
     <section className="w-full py-10 sm:py-15 lg:py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -255,7 +267,7 @@ const ThirdSection = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
   {/* CARD 1 */}
 
@@ -336,7 +348,7 @@ const ThirdSection = () => {
   </FadeInFromLeft>
 
   {/* CARD3 */}
-  <FadeInFromBottom>
+  <FadeInFromLeft>
     <div
        className="
       h-full
@@ -371,14 +383,22 @@ const ThirdSection = () => {
 
       
     </div>
-  </FadeInFromBottom>
+  </FadeInFromLeft>
 
 </div>
 
 
-
+  <div className="block md:hidden md:-mt-110 mt-15">
+    <ContactPage
+      onSuccess={handleSuccess}
+      resetKey={resetFormKey}
+    />
+  </div>
       
       </div>
+
+      {/* ✅ FULL SCREEN POPUP */}
+      <Popup open={showPopup} onClose={() => setShowPopup(false)} />
     </section>
   );
 };

@@ -11,7 +11,8 @@ import FadeInFromRight from './../Animation/FadeInFromRight';
 
 const FourthSection = () => {
   return (
-    <section className="w-full py-0 sm:py-15 lg:py-20 bg-white">
+    <section className="w-full lg:mt-20 mt-10 bg-white">
+      
       <div className="container">
 
         {/* Box Container */}
@@ -24,7 +25,7 @@ const FourthSection = () => {
             
 
             {/* LEFT: Text + Button */}
-            <div className="flex-1 max-w-8xl">
+            <div className="flex-1 max-w-9xl px-5">
               <AnimatedRichText
   className="font-cronos black-text "
   parts={[
@@ -174,6 +175,18 @@ const FourthSection = () => {
         </div>
 
       </div>
+
+      <footer className="w-full container bg-white">
+      <div className=" py-2">
+        {/* Bottom Section */}
+        <div className="mt-4 border-t border-[#dadada] pt-4 lg:pt-1 flex justify-center items-center text-gray-500 text-sm">
+          {/* Copyright */}
+          <span className="text-center black-text text-sm font-poppins">
+            Copyright ©2025 Wisbo. All rights reserved.
+          </span>
+        </div>
+      </div>
+    </footer>
     </section>
   );
 };

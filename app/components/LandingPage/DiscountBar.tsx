@@ -43,7 +43,7 @@ export default function DiscountBar() {
 
 function MarqueeText() {
   return (
-    <div className="flex items-center flex-nowrap whitespace-nowrap gap-8 px-4 py-1 text-white text-xs sm:text-sm font-medium">
+    <div className="flex items-center flex-nowrap whitespace-nowrap gap-8 px-4 py-2 text-white text-xs sm:text-sm font-medium">
       <span>🎉 1st 100 people get pre-launch exclusive access</span>
       <span>🎉 1st 100 people get pre-launch exclusive access</span>
       <span>🎉 1st 100 people get pre-launch exclusive access</span>

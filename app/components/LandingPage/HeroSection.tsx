@@ -76,12 +76,13 @@ Wisbo is a storytelling companion for parents who care deeply about what their c
 
         {/* FORM */}
 {/* <FadeInFromBottom> */}
-  <div className="md:-mt-110">
-    <ContactPage
-      onSuccess={handleSuccess}
-      resetKey={resetFormKey}
-    />
-  </div>
+<div className="hidden md:block md:-mt-110">
+  <ContactPage
+    onSuccess={handleSuccess}
+    resetKey={resetFormKey}
+  />
+</div>
+
 {/* </FadeInFromBottom> */}
 
 
