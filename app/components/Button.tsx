@@ -96,7 +96,7 @@ export default function Button({
   px-4 py-2
   sm:px-6 sm:py-2.5
   text-sm sm:text-base
-  black-text
+  white-text
   text-center
 "
 

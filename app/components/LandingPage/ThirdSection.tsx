@@ -37,60 +37,99 @@ const ThirdSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* STEP 1 */}
-          <FadeInFromLeft >
-          <div className="border rounded-3xl p-3 bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]">
-            <div className="flex flex-col sm:flex-row gap-6 items-start">
+         <FadeInFromLeft>
+  <div
+    className="
+      rounded-3xl
+      bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
+      p-4 sm:p-6
+      outline
+      outline-4
+      outline-dashed
+      outline-[#40C7C7]
+      outline-offset-4
+      sm:outline-offset-6
+    "
+  >
+    <div className="flex flex-col sm:flex-row gap-6 items-start">
 
-              {/* IMAGE FIXED */}
-              <div className="w-full sm:w-40 aspect-square relative shrink-0">
-                <Image
-                  src="/images/stepp1.webp"
-                  alt="Step 1"
-                  fill
-                  className="object-contain sm:object-cover rounded-xl"
-                />
-              </div>
+      {/* IMAGE */}
+      <div className="w-full sm:w-40 aspect-square relative shrink-0">
+        <Image
+          src="/images/stepp1.webp"
+          alt="Step 1"
+          fill
+          className="object-contain sm:object-cover rounded-xl"
+        />
+      </div>
 
-              <div>
-                <h4 className="font-semibold font-poppins black-text">
-                 Place A Figure: Story Starts
-                </h4>
+      {/* TEXT */}
+      <div>
+        <h4 className="font-semibold font-poppins black-text">
+          Place A Figure: Story Starts
+        </h4>
 
-                <p className="mt-2 black-text font-poppins">
-                  Choose a story rooted in Indian culture, values, and imagination.
-                </p>
-              </div>
-            </div>
-          </div>
-          </FadeInFromLeft>
+        <p className="mt-3 black-text font-poppins leading-relaxed">
+          Choose a story rooted in Indian culture, values, and imagination.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</FadeInFromLeft>
 
           {/* STEP 2 */}
-          <FadeInFromRight>
-          <div className="border rounded-3xl p-3 bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]">
-            <div className="flex flex-col sm:flex-row gap-6 items-start">
 
-              {/* IMAGE FIXED */}
-              <div className="w-full sm:w-40 aspect-square relative shrink-0">
-                <Image
-                  src="/images/stepp2.webp"
-                  alt="Step 2"
-                  fill
-                  className="object-contain sm:object-cover rounded-xl"
-                />
-              </div>
 
-              <div>
-                <h4 className="black-text font-semibold font-poppins">
-                  Pick It Up: Story Pauses
-                </h4>
 
-                <p className="mt-2 black-text font-poppins">
-                  Pick it up anytime. The story pauses and resumes effortlessly.
-                </p>
-              </div>
-            </div>
-          </div>
-          </FadeInFromRight>
+
+                   <FadeInFromLeft>
+  <div
+    className="
+      rounded-3xl
+      bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
+      p-4 sm:p-6
+      outline
+      outline-4
+      outline-dashed
+      outline-[#40C7C7]
+      outline-offset-4
+      sm:outline-offset-6
+    "
+  >
+    <div className="flex flex-col sm:flex-row gap-6 items-start">
+
+      {/* IMAGE */}
+      <div className="w-full sm:w-40 aspect-square relative shrink-0">
+        <Image
+          src="/images/stepp2.webp"
+          alt="Step 1"
+          fill
+          className="object-contain sm:object-cover rounded-xl"
+        />
+      </div>
+
+      {/* TEXT */}
+      <div>
+        <h4 className="font-semibold font-poppins black-text">
+           Pick It Up: Story Pauses
+        </h4>
+
+        <p className="mt-3 black-text font-poppins leading-relaxed">
+          Pick it up anytime. The story pauses and resumes effortlessly.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</FadeInFromLeft>
+
+
+
+
+
+    
+
 
         </div>
 
@@ -100,7 +139,7 @@ const ThirdSection = () => {
         <div className="flex justify-center items-center py-10">
            <a href="#contact-form"> 
 
-          <Button>Join Us</Button>
+          <Button>Join Our Family</Button>
            </a>
         </div>
         </FadeInFromBottom>

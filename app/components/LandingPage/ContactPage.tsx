@@ -82,7 +82,7 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
   return (
    <form 
   onSubmit={handleSubmit}
-  className="rounded-3xl shadow-xl p-6 w-full max-w-150 space-y-4 border
+  className="rounded-3xl shadow-xl p-6 w-full max-w-150 space-y-4 border-2 border-[#f6a81c]
              bg-linear-to-b from-[#C5EEEE] to-[#40C7C7] overflow-hidden"
 >
 
@@ -97,7 +97,7 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
 
       {/* Name */}
       <div>
-        <label className="block white-text font-medium mb-1">Full Name</label>
+        <label className="block black-text font-medium mb-1">Full Name</label>
         <input
           className="w-full rounded-[30px] px-4 py-3
            bg-white border-2 border-[#2cbec3]
@@ -113,7 +113,7 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
 
       {/* Phone */}
       <div>
-        <label className="block white-text font-medium mb-1">Phone Number</label>
+        <label className="block black-text font-medium mb-1">Phone Number</label>
         <input
            className="w-full rounded-[30px] px-4 py-3
            bg-white border-2 border-[#2cbec3]
@@ -128,7 +128,7 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
 
       {/* Email */}
       <div>
-        <label className="block white-text font-medium mb-1">Email Address</label>
+        <label className="block black-text font-medium mb-1">Email Address</label>
         <input
           className="w-full rounded-[30px] px-4 py-3
            bg-white border-2 border-[#2cbec3]
@@ -143,7 +143,7 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
 
       {/* 🔥 Child Ages */}
       <div className="space-y-3">
-        <label className="block white-text font-medium">Age of Child (optional)</label>
+        <label className="block black-text font-medium">Age of Child (optional)</label>
 
         {childAges.map((age, index) => (
           <div key={index} className="flex items-center gap-3">
