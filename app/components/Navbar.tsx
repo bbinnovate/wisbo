@@ -28,7 +28,16 @@ const Navbar = () => {
         {/* RIGHT: Button */}
         <div>
           <a href="#contact-form">
-            <Button>Join the Waitlist</Button>
+           <Button
+  onClick={() => {
+    document
+      .getElementById("contact-form")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }}
+>
+  Join the Waitlist
+</Button>
+
           </a>
         </div>
 
