@@ -6,6 +6,11 @@ import { db } from "@/lib/firebase";
 import Button from "../Button";
 
 type Props = {
+   children: React.ReactNode;
+  type?: "button" | "submit";
+  disabled?: boolean;
+  className?: string;
+  onClick?: () => void;
   onSuccess?: () => void;
   resetKey?: number;
 };

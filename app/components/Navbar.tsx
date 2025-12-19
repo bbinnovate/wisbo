@@ -26,18 +26,27 @@ const Navbar = () => {
 
 
         {/* RIGHT: Button */}
-        <div>
-         <Button
+        <Button
   onClick={() => {
-    document
-      .getElementById("contact-form")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const section = document.getElementById("contact-section");
+
+    if (!section) {
+      console.log("❌ contact-section not found");
+      return;
+    }
+
+    const top =
+      section.getBoundingClientRect().top + window.scrollY;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
   }}
 >
   Join the Waitlist
 </Button>
 
-        </div>
 
       </div>
     </header>

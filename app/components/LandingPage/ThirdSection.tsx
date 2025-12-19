@@ -388,12 +388,12 @@ const ThirdSection = () => {
 </div>
 
 
-  <div id="contact-section" className="block md:hidden md:-mt-110 mt-15">
-    <ContactPage
-      onSuccess={handleSuccess}
-      resetKey={resetFormKey}
-    />
-  </div>
+<div id="contact-section" className="block md:hidden mt-15">
+  <ContactPage
+            onSuccess={handleSuccess}
+            resetKey={resetFormKey} children={undefined}  />
+</div>
+
       
       </div>
 
