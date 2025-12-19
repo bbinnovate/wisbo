@@ -88,8 +88,8 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
 
 
       {/* Heading */}
-      <div className="text-center">
-        <h4 className=" font-serif font-bold black-text">
+      <div className="text-center lg:mb-0 mb-5">
+        <h4 className=" font-serif font-bold black-text ">
           Join the Wisbo Family!
         </h4>
         {/* <p className="black-text">Fill in your details</p> */}
@@ -180,9 +180,12 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
       </div>
 
       {/* Submit */}
-      <Button type="submit" disabled={loading}>
-  {loading ? "Submitting..." : "Join the Waitlist"}
-</Button>
+     <div className="w-full">
+  <Button type="submit" disabled={loading} className="w-full">
+    {loading ? "Submitting..." : "Join the Waitlist"}
+  </Button>
+</div>
+
 
     </form>
   );

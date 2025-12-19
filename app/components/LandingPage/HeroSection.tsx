@@ -61,7 +61,7 @@ const HeroSection = () => {
             className="font-cronos black-text whitespace-nowrap"
             parts={[
               { text: "Why we built" },
-              { text: "Wisbo ?", className: "text-highlight" },
+              { text: "Wisbo?", className: "text-highlight" },
             ]}
           />
 
@@ -93,6 +93,9 @@ const HeroSection = () => {
 
       {/* ✅ FULL SCREEN POPUP */}
       <Popup open={showPopup}>
+        <p className="font-semibold Black-text">
+          Thank you for joining the waitlist.
+        </p>
         <ImageSuccess
           src="/images/masscoat.webp"
           alt="Success"
@@ -100,9 +103,7 @@ const HeroSection = () => {
           height={250}
           className="mx-auto mb-4"
         />
-        <p className="font-semibold text-lg">
-          Thank you for joining the waitlist.
-        </p>
+        
       </Popup>
     </section>
   );
