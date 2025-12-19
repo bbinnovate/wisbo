@@ -82,7 +82,7 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
   return (
    <form 
   onSubmit={handleSubmit}
-  className="rounded-3xl shadow-xl p-6 w-full max-w-150 space-y-4 border-2 border-[#f6a81c]
+  className="rounded-3xl shadow-xl p-6 w-full max-w-150 space-y-5 border-2 border-[#f6a81c]
              bg-linear-to-b from-[#C5EEEE] to-[#40C7C7] overflow-hidden"
 >
 
@@ -180,8 +180,12 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
       </div>
 
       {/* Submit */}
-     <div className="w-full">
-  <Button type="submit" disabled={loading} className="w-full">
+     <div className="flex justify-center">
+  <Button
+    type="submit"
+    disabled={loading}
+    className="w-full sm:w-auto px-6"
+  >
     {loading ? "Submitting..." : "Join the Waitlist"}
   </Button>
 </div>

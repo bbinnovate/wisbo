@@ -57,7 +57,7 @@ export default function Button({
       onClick={onClick}
       onMouseMove={updateEyes}
       onTouchMove={updateEyes}
-      className="relative min-w-[9em] rounded-3xl blod-text bg-[#f6a81c] p-0.75 cursor-pointer font-poppins tracking-wide black-text outline-none"
+      className="relative min-w-[9em] rounded-3xl blod-text bg-[#f6a81c] p-0.75 cursor-pointer font-poppins tracking-wide outline-none"
     >
       {/* Eyes */}
       <span

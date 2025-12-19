@@ -48,7 +48,7 @@ export default function OurProgrammes() {
 <div className="pointer-events-none absolute inset-0 z-0">
 
   {/* Top Left Scribble */}
-  <div className="absolute top-6 left-6 hidden sm:block">
+<div className="absolute top-13 left-55 block sm:top-6 sm:left-6">
     <svg width="160" height="80" viewBox="0 0 160 80">
       <path
         d="M10 40 Q30 10, 50 40 T90 40 T130 40"
@@ -61,7 +61,8 @@ export default function OurProgrammes() {
   </div>
 
   {/* Bottom Right Outline Star */}
-  <div className="absolute bottom-10 right-10 hidden md:block">
+<div className="absolute bottom-0 right-78 block md:bottom-10 md:right-10">
+
     <svg width="90" height="90" viewBox="0 0 90 90">
       <path
         d="M45 10 L55 35 L80 45 L55 55 L45 80 L35 55 L10 45 L35 35 Z"

@@ -25,7 +25,7 @@ const HeroSection = () => {
   return (
     <section id="contact-form" className="relative w-full overflow-visible">
       {/* Background Image */}
-    <div className="relative w-full h-[40vh] md:h-[70vh]">
+    <div className="relative w-full h-[60vh] md:h-[70vh]">
   {/* Mobile Image */}
   <Image
     src="/images/bannermob.webp"
@@ -47,7 +47,7 @@ const HeroSection = () => {
 
 
       {/* Content */}
-     <div className="container mx-auto px-4">
+     <div className="container mx-auto">
   <div className="relative md:flex md:justify-end">
     <div className="relative md:right-10 md:bottom-20 mt-6 -md:mt-0 z-10">
 
@@ -56,7 +56,7 @@ const HeroSection = () => {
       <div className="flex flex-col md:flex-row md:items-end lg:gap-16 gap-10">
 
         {/* TEXT BLOCK */}
-        <div className="max-w-230">
+        <div className="max-w-230 lg:mt-20 mt-0">
           <AnimatedRichText
             className="font-cronos black-text whitespace-nowrap"
             parts={[
@@ -67,21 +67,22 @@ const HeroSection = () => {
 
           <FadeInFromBottom>
             <p className=" black-text font-poppins ">
-              We believe children grow best through stories rooted in Indian values,
-              traditions, and imagination — not screens.
+              As parenting gets trickier in this infinite digital maze, it is becoming harder to find things that actually nourish a child's mind. Yet, every parent wants the same result: to raise a child who is kind, resilient, curious, and rooted in the right values.
+That’s why we built Wisbo.
+Wisbo is a storytelling companion for parents who care deeply about what their children absorb. While the digital world focuses on keeping their attention, Wisbo focuses on building their character.
             </p>
           </FadeInFromBottom>
         </div>
 
         {/* FORM */}
-<FadeInFromBottom>
-  <div className="md:-mt-85">
+{/* <FadeInFromBottom> */}
+  <div className="md:-mt-110">
     <ContactPage
       onSuccess={handleSuccess}
       resetKey={resetFormKey}
     />
   </div>
-</FadeInFromBottom>
+{/* </FadeInFromBottom> */}
 
 
       </div>
@@ -92,19 +93,8 @@ const HeroSection = () => {
 
 
       {/* ✅ FULL SCREEN POPUP */}
-      <Popup open={showPopup}>
-        <p className="font-semibold Black-text">
-          Thank you for joining the waitlist.
-        </p>
-        <ImageSuccess
-          src="/images/masscoat.webp"
-          alt="Success"
-          width={250}
-          height={250}
-          className="mx-auto mb-4"
-        />
-        
-      </Popup>
+      <Popup open={showPopup} onClose={() => setShowPopup(false)} />
+
     </section>
   );
 };
