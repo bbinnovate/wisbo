@@ -15,10 +15,10 @@ const FourthSection = () => {
       <div className="container">
 
         {/* Box Container */}
-        <div className="relative rounded-3xl bg-[#FFF3E8]">
+        <div className="relative rounded-3xl bg-[#FFF3E8] px-5 py-10">
 
           {/* Content */}
-          <div className="relative flex flex-col md:flex-row items-center justify-between gap-10 px-16 py-5">
+          <div className="relative flex flex-col md:flex-row items-center justify-between gap-10 ">
 
 
             
@@ -26,7 +26,7 @@ const FourthSection = () => {
             {/* LEFT: Text + Button */}
             <div className="flex-1 max-w-8xl">
               <AnimatedRichText
-  className="font-cronos black-text whitespace-nowrap"
+  className="font-cronos black-text "
   parts={[
     { text: "Stories that grow with your" },
     { text: "child", className: "text-highlight" },

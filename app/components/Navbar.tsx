@@ -12,17 +12,18 @@ const Navbar = () => {
 
         {/* LEFT: Logo */}
         <div className="flex items-center">
-           <Link href="/">
-          <Image
-            src="/images/logo.webp"
-            alt="Logo"
-            width={200}
-            height={100}
-            className="object-contain"
-            priority
-          />
-           </Link>
-        </div>
+  <Link href="/">
+    <Image
+      src="/images/logo.webp"
+      alt="Logo"
+      width={200}
+      height={100}
+      className="object-contain w-28 sm:w-36 lg:w-50"
+      priority
+    />
+  </Link>
+</div>
+
 
         {/* RIGHT: Button */}
         <div>

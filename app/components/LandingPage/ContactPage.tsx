@@ -97,12 +97,12 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
 
       {/* Name */}
       <div>
-        <label className="block text-sm font-medium mb-1">Full Name</label>
+        <label className="block white-text font-medium mb-1">Full Name</label>
         <input
           className="w-full rounded-[30px] px-4 py-3
            bg-white border-2 border-[#2cbec3]
            focus:border-[#f6a81c] focus:ring-0
-           outline-none transition-colors duration-200"
+           outline-none transition-colors duration-200 black-text"
 
           placeholder="Enter your name"
           value={form.name}
@@ -113,12 +113,12 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
 
       {/* Phone */}
       <div>
-        <label className="block text-sm font-medium mb-1">Phone Number</label>
+        <label className="block white-text font-medium mb-1">Phone Number</label>
         <input
            className="w-full rounded-[30px] px-4 py-3
            bg-white border-2 border-[#2cbec3]
            focus:border-[#f6a81c] focus:ring-0
-           outline-none transition-colors duration-200"
+           outline-none transition-colors duration-200 black-text"
           placeholder="10-digit mobile number"
           value={form.phone}
           onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -128,12 +128,12 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
 
       {/* Email */}
       <div>
-        <label className="block text-sm font-medium mb-1">Email Address</label>
+        <label className="block white-text font-medium mb-1">Email Address</label>
         <input
           className="w-full rounded-[30px] px-4 py-3
            bg-white border-2 border-[#2cbec3]
            focus:border-[#f6a81c] focus:ring-0
-           outline-none transition-colors duration-200"
+           outline-none transition-colors duration-200 black-text"
           placeholder="your@email.com"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -143,7 +143,7 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
 
       {/* 🔥 Child Ages */}
       <div className="space-y-3">
-        <label className="block text-sm font-medium">Age of Child (optional)</label>
+        <label className="block white-text font-medium">Age of Child (optional)</label>
 
         {childAges.map((age, index) => (
           <div key={index} className="flex items-center gap-3">
@@ -151,7 +151,7 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
                className="w-full flex-1 rounded-[30px] px-4 py-3
            bg-white border-2 border-[#2cbec3]
            focus:border-[#f6a81c] focus:ring-0
-           outline-none transition-colors duration-200"
+           outline-none transition-colors duration-200 black-text"
               placeholder={`Child ${index + 1} age`}
               value={age}
               onChange={(e) => {

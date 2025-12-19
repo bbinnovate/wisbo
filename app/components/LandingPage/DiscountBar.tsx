@@ -3,8 +3,7 @@
 export default function DiscountBar() {
   return (
     <>
-      {/* Discount Bar */}
-      <div className="sticky top-20 z-40 w-full bg-[#f6a81c] overflow-hidden">
+      <div className="sticky top-20 z-40 w-full bg-[#f6a81c] overflow-hidden h-8 sm:h-9">
         <div className="marquee">
           <div className="marquee__track">
             <MarqueeText />
@@ -13,16 +12,17 @@ export default function DiscountBar() {
         </div>
       </div>
 
-      {/* Component-level CSS */}
       <style jsx>{`
         .marquee {
           width: 100%;
           overflow: hidden;
           white-space: nowrap;
+          contain: content;
         }
 
         .marquee__track {
           display: flex;
+          flex-wrap: nowrap;
           width: max-content;
           animation: marquee 18s linear infinite;
           will-change: transform;
@@ -43,7 +43,7 @@ export default function DiscountBar() {
 
 function MarqueeText() {
   return (
-    <div className="flex items-center gap-8 px-4 py-1 text-white text-xs sm:text-sm font-medium">
+    <div className="flex items-center flex-nowrap whitespace-nowrap gap-8 px-4 py-1 text-white text-xs sm:text-sm font-medium">
       <span>🎉 1st 100 registrations get a special price.</span>
       <span>🎉 1st 100 registrations get a special price.</span>
       <span>🎉 1st 100 registrations get a special price.</span>

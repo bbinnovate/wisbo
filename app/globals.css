@@ -229,8 +229,8 @@ li{
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: white;
+  color: var(--background);
   font-family: 'Poppins', 'CRONOS-KID';
 }
 
@@ -357,4 +357,16 @@ button */
 
 .eye {
   animation: eye-blink 3s infinite;
+}
+
+
+
+
+/* discountbar */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  contain: content;
 }

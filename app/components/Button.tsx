@@ -89,7 +89,17 @@ export default function Button({
     transformOrigin: "1.25em 50%",
     background: "linear-gradient(90deg, #FF6600 13%, #F9A91E 100%)",
   }}
-  className="relative block rounded-3xl px-6 py-2 text-white"
+  className="
+  relative
+  block
+  rounded-3xl
+  px-4 py-2
+  sm:px-6 sm:py-2.5
+  text-sm sm:text-base
+  black-text
+  text-center
+"
+
 >
   {children}
 </motion.span>
