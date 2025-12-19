@@ -261,18 +261,21 @@ const ThirdSection = () => {
 
    <FadeInFromLeft>
     <div
-      className="
-        rounded-3xl
-        bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
-        p-4 sm:p-6
-        outline
-        outline-4
-        outline-dashed
-        outline-[#40C7C7]
-        outline-offset-4
-        sm:outline-offset-6
-        text-center
-      "
+       className="
+      h-full
+      flex
+      flex-col
+      rounded-3xl
+      bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
+      p-4 sm:p-6
+      outline
+      outline-4
+      outline-dashed
+      outline-[#40C7C7]
+      outline-offset-4
+      sm:outline-offset-6
+      text-center
+    "
     >
       {/* IMAGE */}
       <div className="w-full aspect-square relative mb-6">
@@ -297,18 +300,21 @@ const ThirdSection = () => {
    {/* step2 */}
   <FadeInFromLeft>
     <div
-      className="
-        rounded-3xl
-        bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
-        p-4 sm:p-6
-        outline
-        outline-4
-        outline-dashed
-        outline-[#40C7C7]
-        outline-offset-4
-        sm:outline-offset-6
-        text-center
-      "
+       className="
+      h-full
+      flex
+      flex-col
+      rounded-3xl
+      bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
+      p-4 sm:p-6
+      outline
+      outline-4
+      outline-dashed
+      outline-[#40C7C7]
+      outline-offset-4
+      sm:outline-offset-6
+      text-center
+    "
     >
       {/* IMAGE */}
       <div className="w-full aspect-square relative mb-6">
@@ -332,18 +338,21 @@ const ThirdSection = () => {
   {/* CARD3 */}
   <FadeInFromBottom>
     <div
-      className="
-        rounded-3xl
-        bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
-        p-4 sm:p-6
-        outline
-        outline-4
-        outline-dashed
-        outline-[#40C7C7]
-        outline-offset-4
-        sm:outline-offset-6
-        text-center
-      "
+       className="
+      h-full
+      flex
+      flex-col
+      rounded-3xl
+      bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
+      p-4 sm:p-6
+      outline
+      outline-4
+      outline-dashed
+      outline-[#40C7C7]
+      outline-offset-4
+      sm:outline-offset-6
+      text-center
+    "
     >
       {/* IMAGE */}
       <div className="w-full aspect-square relative mb-6">
@@ -367,17 +376,6 @@ const ThirdSection = () => {
 </div>
 
 
-
-        <FadeInFromBottom>
-
-        {/* CTA */}
-        <div className="flex justify-center items-center py-10">
-           <a href="#contact-form"> 
-
-          <Button>Join Our Family</Button>
-           </a>
-        </div>
-        </FadeInFromBottom>
 
       
       </div>

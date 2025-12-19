@@ -1,14 +1,58 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import confetti from "canvas-confetti";
 
 type PopupProps = {
   open: boolean;
   onClose?: () => void;
 };
 
+/* 🎉 Confetti from LEFT-BOTTOM & RIGHT-BOTTOM */
+const shootBottomSideConfetti = () => {
+  const duration = 2500;
+  const end = Date.now() + duration;
+
+  const colors = ["#f6a81c", "#ff4d6d", "#ffffff"];
+
+  (function frame() {
+    // LEFT BOTTOM → UPWARD
+    confetti({
+      particleCount: 6,
+      angle: 60,              // shoots upward-right
+      spread: 70,
+      origin: { x: 0, y: 1 }, // left bottom
+      colors,
+      startVelocity: 45,
+      gravity: 0.9,
+    });
+
+    // RIGHT BOTTOM → UPWARD
+    confetti({
+      particleCount: 6,
+      angle: 120,             // shoots upward-left
+      spread: 70,
+      origin: { x: 1, y: 1 }, // right bottom
+      colors,
+      startVelocity: 45,
+      gravity: 0.9,
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+};
+
 const Popup = ({ open, onClose }: PopupProps) => {
+  /* 🔥 Fire confetti when popup opens */
+  useEffect(() => {
+    if (open) {
+      shootBottomSideConfetti();
+    }
+  }, [open]);
+
   if (!open) return null;
 
   return (
@@ -21,7 +65,7 @@ const Popup = ({ open, onClose }: PopupProps) => {
 
       {/* Popup */}
       <div className="fixed inset-0 z-50 flex items-center justify-center">
-        <div className="relative  bg-linear-to-b from-[#C5EEEE] to-[#40C7C7] rounded-2xl px-8 pt-14 pb-10 text-center shadow-xl w-[90%] max-w-md">
+        <div className="relative bg-linear-to-b from-[#C5EEEE] to-[#40C7C7] rounded-2xl px-8 pt-14 pb-10 text-center shadow-xl w-[90%] max-w-md">
 
           {/* Close Button */}
           <button
@@ -43,13 +87,11 @@ const Popup = ({ open, onClose }: PopupProps) => {
               transition
             "
           >
-            <span className="white-text text-xl font-bold leading-none">
-              ✕
-            </span>
+            <span className="text-white text-xl font-bold">✕</span>
           </button>
 
           {/* Message */}
-          <h2 className="font-cronos  font-bold black-text leading-tight">
+          <h2 className="font-cronos font-bold text-black leading-tight text-2xl">
             Thank You <br /> For Joining!
           </h2>
 

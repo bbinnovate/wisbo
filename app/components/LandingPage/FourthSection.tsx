@@ -11,7 +11,7 @@ import FadeInFromRight from './../Animation/FadeInFromRight';
 
 const FourthSection = () => {
   return (
-    <section className="w-full py-0 sm:py-15 lg:py-10 bg-white">
+    <section className="w-full py-0 sm:py-15 lg:py-20 bg-white">
       <div className="container">
 
         {/* Box Container */}

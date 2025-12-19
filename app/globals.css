@@ -370,3 +370,39 @@ button */
   white-space: nowrap;
   contain: content;
 }
+
+
+
+/* confitii */
+@keyframes confettiFromLeft {
+  0% {
+    transform: translateX(-150px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120vw) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes confettiFromRight {
+  0% {
+    transform: translateX(150px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-120vw) rotate(-720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 18px;
+  border-radius: 3px;
+  animation-duration: 3.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+

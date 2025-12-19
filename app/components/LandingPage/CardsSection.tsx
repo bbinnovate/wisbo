@@ -78,7 +78,7 @@ export default function OurProgrammes() {
          <AnimatedRichText
   className="black-text text-center mb-12"
   parts={[
-    { text: "What Makes Our " },
+    { text: "What Makes Our" },
     { text: "Stories Special", className: "text-highlight" },
   ]}
 />
@@ -93,7 +93,7 @@ export default function OurProgrammes() {
 
     
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-end ">
           {programmes.map((item, i) => (
             <div key={i} className="relative">
 

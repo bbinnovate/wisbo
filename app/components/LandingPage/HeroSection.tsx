@@ -67,10 +67,10 @@ const HeroSection = () => {
 
           <FadeInFromBottom>
             <p className=" black-text font-poppins ">
-              As parenting gets trickier in this infinite digital maze, it is becoming harder to find things that actually nourish a child's mind. Yet, every parent wants the same result: to raise a child who is kind, resilient, curious, and rooted in the right values.
-That’s why we built Wisbo.
+              As parenting gets trickier in this infinite digital maze, it is becoming harder to find things that actually nourish a child's mind. Yet, every parent wants the same result: to raise a child who is kind, resilient, curious, and rooted in the right values. <br />
+<span className=" font-bold"> That’s why we built Wisbo. </span> <br />
 Wisbo is a storytelling companion for parents who care deeply about what their children absorb. While the digital world focuses on keeping their attention, Wisbo focuses on building their character.
-            </p>
+</p>
           </FadeInFromBottom>
         </div>
 
