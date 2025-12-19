@@ -30,7 +30,7 @@ const FadeInFromRight = ({ children, scrollIntoView }: Props) => {
   return (
     // 👇 This prevents horizontal scroll
     <div className="overflow-hidden">
-      <div
+      <div style={{ pointerEvents: "none" }}
         ref={domRef}
         className={`transition-all duration-1000 ease-out transform ${
           isVisible

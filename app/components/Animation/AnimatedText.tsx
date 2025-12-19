@@ -43,7 +43,8 @@ const AnimatedRichText = ({
 }: AnimatedRichTextProps) => {
   return (
     <motion.h2
-      style={{ fontFamily: "CRONOS-KID" }}
+      style={{ fontFamily: "CRONOS-KID" ,pointerEvents: "none"}}
+      
       className={className}
       variants={containerVariants}
       initial="hidden"
@@ -53,6 +54,7 @@ const AnimatedRichText = ({
       {parts.map((part, partIndex) =>
         part.text.split(" ").map((word, wordIndex) => (
           <motion.span
+          
             key={`${partIndex}-${wordIndex}`}
             variants={wordVariants}
             className={`inline-block mr-2 ${part.className || ""}`}

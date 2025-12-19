@@ -28,7 +28,7 @@ const FadeInFromLeft = ({ children, scrollIntoView }: Props) => {
   }, [scrollIntoView]);
 
   return (
-    <div
+    <div style={{ pointerEvents: "none" }}
       ref={domRef}
       className={`transition-all duration-1000 ease-out transform ${
         isVisible

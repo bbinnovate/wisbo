@@ -93,13 +93,12 @@ export default function Button({ children, onClick }: CreepyButtonProps) {
   };
 
   return (
-     <button
-    type="button"        // ✅ ADD THIS (MOST IMPORTANT)
-    onClick={onClick}    // already there ✔
-    onMouseMove={updateEyes}
-    onTouchMove={updateEyes}
-    className="relative min-w-[9em] rounded-3xl bg-[#f6a81c] p-0.75 cursor-pointer font-poppins tracking-wide outline-none"
-  >
+    <button
+      onClick={onClick}
+      onMouseMove={updateEyes}
+      onTouchMove={updateEyes}
+      className="relative min-w-[9em] rounded-3xl bg-[#f6a81c] p-0.75 cursor-pointer font-poppins tracking-wide outline-none"
+    >
       {/* Eyes */}
       <span ref={eyesRef} className="absolute bottom-2 right-4 flex gap-1">
         {[0, 1].map((i) => (

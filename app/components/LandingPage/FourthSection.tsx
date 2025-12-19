@@ -11,7 +11,8 @@ import FadeInFromRight from './../Animation/FadeInFromRight';
 
 const FourthSection = () => {
   return (
-    <section className="w-full lg:mt-20 mt-10 bg-white">
+   <section className="relative z-999 w-full lg:mt-20 mt-10 bg-white">
+
       
       <div className="container">
 
@@ -46,34 +47,37 @@ const FourthSection = () => {
               </FadeInFromBottom>
 
 <FadeInFromLeft>
-              <div className="mt-6 flex flex-row gap-4">
-                <Button
-                  onClick={() => {
-                    const isMobile = window.innerWidth < 768;
-                
-                    const targetId = isMobile
-                      ? "contact-section-mobile"
-                      : "contact-section-desktop";
-                
-                    const section = document.getElementById(targetId);
-                
-                    if (!section) {
-                      console.log("❌ contact section not found:", targetId);
-                      return;
-                    }
-                
-                    const top =
-                      section.getBoundingClientRect().top + window.scrollY - 80; // optional offset
-                
-                    window.scrollTo({
-                      top,
-                      behavior: "smooth",
-                    });
-                  }}
-                >
-                  Join the Waitlist
-                </Button>
+  <div className="relative z-1000 pointer-events-auto mt-6 flex flex-row gap-4">
 
+
+                  {/* RIGHT: Button */}
+                 <Button
+                   onClick={() => {
+                     const isMobile = window.innerWidth < 768;
+                 
+                     const targetId = isMobile
+                       ? "contact-section-mobile"
+                       : "contact-section-desktop";
+                 
+                     const section = document.getElementById(targetId);
+                 
+                     if (!section) {
+                       console.log("❌ contact section not found:", targetId);
+                       return;
+                     }
+                 
+                     const top =
+                       section.getBoundingClientRect().top + window.scrollY - 80; // optional offset
+                 
+                     window.scrollTo({
+                       top,
+                       behavior: "smooth",
+                     });
+                   }}
+                 >
+                   Join the Waitlist
+                 </Button>
+                 
     {/* Call Button */}
 <a
   href="tel:+919920448823"
@@ -180,14 +184,14 @@ const FourthSection = () => {
             {/* RIGHT: PNG Image (overflow from top) */}
             
             <div className="flex-1 flex justify-center md:justify-end relative">
-              <div className="lg:-mt-40 -mt-20">
+              <div className="lg:-mt-40 -mt-13">
                 <FadeInFromRight >
                 <Image
                   src="/images/masscoat.webp"
                   alt="Illustration"
                   width={400}
                   height={400}
-                  className="object-contain"
+                  className="object-contain "
                 />
                 </FadeInFromRight>
               </div>
