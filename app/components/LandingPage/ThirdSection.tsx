@@ -255,104 +255,118 @@ const ThirdSection = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          {/* STEP 1 */}
-         <FadeInFromLeft>
-  <div
-    className="
-      rounded-3xl
-      bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
-      p-4 sm:p-6
-      outline
-      outline-4
-      outline-dashed
-      outline-[#40C7C7]
-      outline-offset-4
-      sm:outline-offset-6
-    "
-  >
-    <div className="flex flex-col sm:flex-row gap-6 items-start">
+  {/* CARD 1 */}
 
+   <FadeInFromLeft>
+    <div
+      className="
+        rounded-3xl
+        bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
+        p-4 sm:p-6
+        outline
+        outline-4
+        outline-dashed
+        outline-[#40C7C7]
+        outline-offset-4
+        sm:outline-offset-6
+        text-center
+      "
+    >
       {/* IMAGE */}
-      <div className="w-full sm:w-40 aspect-square relative shrink-0">
+      <div className="w-full aspect-square relative mb-6">
+        <Image
+          src="/images/stepp3.webp"
+          alt="Step 1"
+          fill
+          className="object-contain rounded-2xl"
+        />
+      </div>
+
+      {/* MAIN TEXT */}
+      <h4 className="font-semibold font-poppins black-text">
+        Pick a figure
+      </h4>
+
+      
+    </div>
+  </FadeInFromLeft>
+
+
+   {/* step2 */}
+  <FadeInFromLeft>
+    <div
+      className="
+        rounded-3xl
+        bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
+        p-4 sm:p-6
+        outline
+        outline-4
+        outline-dashed
+        outline-[#40C7C7]
+        outline-offset-4
+        sm:outline-offset-6
+        text-center
+      "
+    >
+      {/* IMAGE */}
+      <div className="w-full aspect-square relative mb-6">
         <Image
           src="/images/stepp1.webp"
           alt="Step 1"
           fill
-          className="object-contain sm:object-cover rounded-xl"
+          className="object-contain rounded-2xl"
         />
       </div>
 
-      {/* TEXT */}
-      <div>
-        <h4 className="font-semibold font-poppins black-text">
-          Place A Figure: Story Starts
-        </h4>
+      {/* MAIN TEXT */}
+      <h4 className="font-semibold font-poppins black-text">
+        Place it on the Wisbox to start the story
+      </h4>
 
-        <p className="mt-3 black-text font-poppins leading-relaxed">
-          Choose a story rooted in Indian culture, values, and imagination.
-        </p>
-      </div>
-
+      
     </div>
-  </div>
-</FadeInFromLeft>
+  </FadeInFromLeft>
 
-          {/* STEP 2 */}
-
-
-
-
-                   <FadeInFromLeft>
-  <div
-    className="
-      rounded-3xl
-      bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
-      p-4 sm:p-6
-      outline
-      outline-4
-      outline-dashed
-      outline-[#40C7C7]
-      outline-offset-4
-      sm:outline-offset-6
-    "
-  >
-    <div className="flex flex-col sm:flex-row gap-6 items-start">
-
+  {/* CARD3 */}
+  <FadeInFromBottom>
+    <div
+      className="
+        rounded-3xl
+        bg-linear-to-b from-[#C5EEEE] to-[#40C7C7]
+        p-4 sm:p-6
+        outline
+        outline-4
+        outline-dashed
+        outline-[#40C7C7]
+        outline-offset-4
+        sm:outline-offset-6
+        text-center
+      "
+    >
       {/* IMAGE */}
-      <div className="w-full sm:w-40 aspect-square relative shrink-0">
+      <div className="w-full aspect-square relative mb-6">
         <Image
           src="/images/stepp2.webp"
-          alt="Step 1"
+          alt="Step 2"
           fill
-          className="object-contain sm:object-cover rounded-xl"
+          className="object-contain rounded-2xl"
         />
       </div>
 
-      {/* TEXT */}
-      <div>
-        <h4 className="font-semibold font-poppins black-text">
-           Pick It Up: Story Pauses
-        </h4>
+      {/* MAIN TEXT */}
+      <h4 className="font-semibold font-poppins black-text">
+        Pick it to up to pause
+      </h4>
 
-        <p className="mt-3 black-text font-poppins leading-relaxed">
-          Pick it up anytime. The story pauses and resumes effortlessly.
-        </p>
-      </div>
-
+      
     </div>
-  </div>
-</FadeInFromLeft>
+  </FadeInFromBottom>
+
+</div>
 
 
-
-
-
-    
-
-
-        </div>
 
         <FadeInFromBottom>
 
