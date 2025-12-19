@@ -23,7 +23,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="contact-form" className="relative w-full overflow-visible">
+    <section  className="relative w-full overflow-visible">
       {/* Background Image */}
     <div className="relative w-full h-[60vh] md:h-[70vh]">
   {/* Mobile Image */}
@@ -76,8 +76,9 @@ Wisbo is a storytelling companion for parents who care deeply about what their c
 
         {/* FORM */}
 {/* <FadeInFromBottom> */}
-<div className="hidden md:block md:-mt-110">
+<div id="contact-section" className="hidden md:block md:-mt-110">
   <ContactPage
+  
     onSuccess={handleSuccess}
     resetKey={resetFormKey}
   />

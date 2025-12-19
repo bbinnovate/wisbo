@@ -388,7 +388,7 @@ const ThirdSection = () => {
 </div>
 
 
-  <div className="block md:hidden md:-mt-110 mt-15">
+  <div id="contact-section" className="block md:hidden md:-mt-110 mt-15">
     <ContactPage
       onSuccess={handleSuccess}
       resetKey={resetFormKey}

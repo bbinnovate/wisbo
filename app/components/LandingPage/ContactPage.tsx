@@ -80,7 +80,7 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
   };
 
   return (
-   <form 
+   <form id="contact-form"
   onSubmit={handleSubmit}
   className="rounded-3xl shadow-xl p-6 w-full max-w-150 space-y-4 border-2 border-[#f6a81c]
              bg-linear-to-b from-[#C5EEEE] to-[#40C7C7] overflow-hidden"

@@ -47,9 +47,19 @@ const FourthSection = () => {
 
 <FadeInFromLeft>
               <div className="mt-6 flex flex-row gap-4">
-                 <a href="#contact-form">
-    <Button>Join the Waitlist</Button>
-  </a>
+                  <div>
+                   <Button
+                     onClick={() => {
+                       const el = document.getElementById("contact-section");
+                       el?.scrollIntoView({
+                         behavior: "smooth",
+                         block: "start",
+                       });
+                     }}
+                   >
+                     Join the Waitlist
+                   </Button>
+                 </div>
 
     {/* Call Button */}
 <a
