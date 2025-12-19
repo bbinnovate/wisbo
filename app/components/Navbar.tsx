@@ -1,0 +1,39 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import Button from "./Button";
+import Link from "next/link";
+
+const Navbar = () => {
+  return (
+    <header className="sticky top-0 z-50 w-full bg-white">
+      <div className="container h-20 flex items-center justify-between">
+
+        {/* LEFT: Logo */}
+        <div className="flex items-center">
+           <Link href="/">
+          <Image
+            src="/images/logo.webp"
+            alt="Logo"
+            width={200}
+            height={100}
+            className="object-contain"
+            priority
+          />
+           </Link>
+        </div>
+
+        {/* RIGHT: Button */}
+        <div>
+          <a href="#contact-form">
+            <Button>Join the Waitlist</Button>
+          </a>
+        </div>
+
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;
