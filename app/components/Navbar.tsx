@@ -27,8 +27,7 @@ const Navbar = () => {
 
         {/* RIGHT: Button */}
         <div>
-          <a href="#contact-form">
-           <Button
+         <Button
   onClick={() => {
     document
       .getElementById("contact-form")
@@ -38,7 +37,6 @@ const Navbar = () => {
   Join the Waitlist
 </Button>
 
-          </a>
         </div>
 
       </div>
