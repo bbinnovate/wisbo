@@ -74,7 +74,7 @@ export default function Button({ children, onClick }: CreepyButtonProps) {
   const handleHoverStart = () => {
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
 
-    controls.stop();
+    controls.stop(); // ⛔ stop auto loop
     controls.start({
       rotate: -12,
       transition: { type: "spring", stiffness: 250, damping: 18 },
@@ -88,7 +88,7 @@ export default function Button({ children, onClick }: CreepyButtonProps) {
     });
 
     hoverTimeout.current = setTimeout(() => {
-      startAutoAnimation();
+      startAutoAnimation(); // ▶ resume after 1s
     }, 1000);
   };
 
@@ -100,7 +100,7 @@ export default function Button({ children, onClick }: CreepyButtonProps) {
       className="relative min-w-[9em] rounded-3xl bg-[#f6a81c] p-0.75 cursor-pointer font-poppins tracking-wide outline-none"
     >
       {/* Eyes */}
-      <span ref={eyesRef} className="absolute bottom-2 right-4 flex gap-1 pointer-events-none">
+      <span ref={eyesRef} className="absolute bottom-2 right-4 flex gap-1">
         {[0, 1].map((i) => (
           <span
             key={i}
@@ -124,7 +124,6 @@ export default function Button({ children, onClick }: CreepyButtonProps) {
         style={{
           transformOrigin: "1.25em 50%",
           background: "linear-gradient(90deg, #FF6600 13%, #F9A91E 100%)",
-          pointerEvents: "none", // ✅ THIS IS THE FIX
         }}
         className="
           relative block rounded-3xl
