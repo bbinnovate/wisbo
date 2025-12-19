@@ -16,7 +16,7 @@ const FourthSection = () => {
       <div className="container">
 
         {/* Box Container */}
-        <div className="relative rounded-3xl bg-[#FFF3E8] px-5 py-10">
+        <div className="relative rounded-3xl bg-[#FFF3E8] px-5 lg:pb-10 pb-0 pt-10"> 
 
           {/* Content */}
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-10 ">
@@ -87,7 +87,7 @@ const FourthSection = () => {
   id="fi_126509"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 473.806 473.806"
-  className="shrink-0 w-6 h-6 sm:w-5 sm:h-5 text-[#f6a81c] "
+  className="shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-[#f6a81c] "
   fill="currentColor"
 >
 
@@ -157,7 +157,7 @@ const FourthSection = () => {
             {/* RIGHT: PNG Image (overflow from top) */}
             
             <div className="flex-1 flex justify-center md:justify-end relative">
-              <div className="lg:-mt-40 -mt-10">
+              <div className="lg:-mt-40 -mt-20">
                 <FadeInFromRight >
                 <Image
                   src="/images/masscoat.webp"
