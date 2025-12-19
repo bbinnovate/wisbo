@@ -5,7 +5,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 type Coords = { x: number; y: number };
 
-
 interface CreepyButtonProps {
   children: React.ReactNode;
   type?: "button" | "submit";
@@ -17,10 +16,12 @@ interface CreepyButtonProps {
 export default function Button({ children, onClick }: CreepyButtonProps) {
   const eyesRef = useRef<HTMLSpanElement>(null);
   const controls = useAnimation();
+  const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const [eyeCoords, setEyeCoords] = useState<Coords>({ x: 0, y: 0 });
 
-  useEffect(() => {
+  /* ---------------- AUTO LOOP ---------------- */
+  const startAutoAnimation = () => {
     controls.start({
       rotate: [0, -12, -12, 0, 0],
       transition: {
@@ -30,14 +31,30 @@ export default function Button({ children, onClick }: CreepyButtonProps) {
         repeat: Infinity,
       },
     });
-  }, [controls]);
+  };
 
-  const updateEyes = (e: React.MouseEvent<HTMLButtonElement>) => {
+  useEffect(() => {
+    startAutoAnimation();
+    return () => {
+      if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    };
+  }, []);
+
+  /* ---------------- EYES ---------------- */
+  const updateEyes = (
+    e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>
+  ) => {
+    const event = "touches" in e ? e.touches[0] : e;
     const rect = eyesRef.current?.getBoundingClientRect();
     if (!rect) return;
 
-    const dx = e.clientX - (rect.left + rect.width / 2);
-    const dy = e.clientY - (rect.top + rect.height / 2);
+    const eyesCenter = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    };
+
+    const dx = event.clientX - eyesCenter.x;
+    const dy = event.clientY - eyesCenter.y;
 
     const angle = Math.atan2(-dy, dx) + Math.PI / 2;
     const distance = Math.hypot(dx, dy);
@@ -53,34 +70,38 @@ export default function Button({ children, onClick }: CreepyButtonProps) {
     y: `${-50 + eyeCoords.y * 50}%`,
   };
 
-  // 🔥 GUARANTEED MOBILE SCROLL
-  const handlePress = () => {
-    const el = document.getElementById("contact-section");
-    if (!el) return;
+  /* ---------------- HOVER HANDLERS ---------------- */
+  const handleHoverStart = () => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
 
-    const y =
-      el.getBoundingClientRect().top + window.pageYOffset - 20;
+    controls.stop(); // ⛔ stop auto loop
+    controls.start({
+      rotate: -12,
+      transition: { type: "spring", stiffness: 250, damping: 18 },
+    });
+  };
 
-    window.scrollTo({
-      top: y,
-      behavior: "smooth",
+  const handleHoverEnd = () => {
+    controls.start({
+      rotate: 0,
+      transition: { duration: 0.3 },
     });
 
-    onClick?.();
+    hoverTimeout.current = setTimeout(() => {
+      startAutoAnimation(); // ▶ resume after 1s
+    }, 1000);
   };
 
   return (
-    <button
-      onClick={handlePress}
-      onTouchStart={handlePress} // 📱 MOBILE FIX
-      onMouseMove={updateEyes}
-      className="relative min-w-[9em] rounded-3xl bg-[#f6a81c] p-0.75 cursor-pointer font-poppins tracking-wide outline-none"
-    >
+     <button
+    type="button"        // ✅ ADD THIS (MOST IMPORTANT)
+    onClick={onClick}    // already there ✔
+    onMouseMove={updateEyes}
+    onTouchMove={updateEyes}
+    className="relative min-w-[9em] rounded-3xl bg-[#f6a81c] p-0.75 cursor-pointer font-poppins tracking-wide outline-none"
+  >
       {/* Eyes */}
-      <span
-        ref={eyesRef}
-        className="absolute bottom-2 right-4 flex gap-1 pointer-events-none"
-      >
+      <span ref={eyesRef} className="absolute bottom-2 right-4 flex gap-1">
         {[0, 1].map((i) => (
           <span
             key={i}
@@ -99,12 +120,17 @@ export default function Button({ children, onClick }: CreepyButtonProps) {
       {/* Cover */}
       <motion.span
         animate={controls}
+        onHoverStart={handleHoverStart}
+        onHoverEnd={handleHoverEnd}
         style={{
           transformOrigin: "1.25em 50%",
           background: "linear-gradient(90deg, #FF6600 13%, #F9A91E 100%)",
-          pointerEvents: "none",
         }}
-        className="relative block rounded-3xl px-4 py-2 sm:px-6 sm:py-2.5 text-white text-center"
+        className="
+          relative block rounded-3xl
+          px-4 py-2 sm:px-6 sm:py-2.5
+          text-xs sm:text-base text-white text-center
+        "
       >
         {children}
       </motion.span>

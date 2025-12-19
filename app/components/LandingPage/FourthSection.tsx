@@ -47,9 +47,32 @@ const FourthSection = () => {
 
 <FadeInFromLeft>
               <div className="mt-6 flex flex-row gap-4">
-                 <a href="#contact-form">
-    <Button>Join the Waitlist</Button>
-  </a>
+                <Button
+                  onClick={() => {
+                    const isMobile = window.innerWidth < 768;
+                
+                    const targetId = isMobile
+                      ? "contact-section-mobile"
+                      : "contact-section-desktop";
+                
+                    const section = document.getElementById(targetId);
+                
+                    if (!section) {
+                      console.log("❌ contact section not found:", targetId);
+                      return;
+                    }
+                
+                    const top =
+                      section.getBoundingClientRect().top + window.scrollY - 80; // optional offset
+                
+                    window.scrollTo({
+                      top,
+                      behavior: "smooth",
+                    });
+                  }}
+                >
+                  Join the Waitlist
+                </Button>
 
     {/* Call Button */}
 <a

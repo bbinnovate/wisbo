@@ -26,17 +26,23 @@ const Navbar = () => {
 
 
         {/* RIGHT: Button */}
-        <Button
+<Button
   onClick={() => {
-    const section = document.getElementById("contact-section");
+    const isMobile = window.innerWidth < 768;
+
+    const targetId = isMobile
+      ? "contact-section-mobile"
+      : "contact-section-desktop";
+
+    const section = document.getElementById(targetId);
 
     if (!section) {
-      console.log("❌ contact-section not found");
+      console.log("❌ contact section not found:", targetId);
       return;
     }
 
     const top =
-      section.getBoundingClientRect().top + window.scrollY;
+      section.getBoundingClientRect().top + window.scrollY - 80; // optional offset
 
     window.scrollTo({
       top,
@@ -46,6 +52,7 @@ const Navbar = () => {
 >
   Join the Waitlist
 </Button>
+
 
 
       </div>
