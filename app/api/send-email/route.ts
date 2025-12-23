@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+
+// API route to send email upon form submission
 export async function POST(req: Request) {
   try {
     const body = await req.json();
