@@ -70,6 +70,18 @@ const ContactPage = ({ onSuccess, resetKey }: Props) => {
         createdAt: serverTimestamp(),
       });
 
+      // ✅ SEND EMAIL
+await fetch("/api/send-email", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    name: form.name,
+    phone: form.phone,
+    email: form.email,
+    childAges: childAges.filter((age) => age.trim() !== ""),
+  }),
+});
+
       onSuccess?.();
     } catch (error) {
       console.error("Firestore error:", error);
