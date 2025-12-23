@@ -105,7 +105,7 @@ export default function OurProgrammes() {
                   transform: "scale(1.05)",
                 }}
               />
-
+{/*okookko  */}
               {/* Card */}
               <motion.div
                 whileHover={{ y: -8 }}
